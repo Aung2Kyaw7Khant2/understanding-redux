@@ -1,12 +1,15 @@
 import { INCREASE_NUM, DECREASE_NUM } from "./numActionTypes";
 
-const numReducer = (state = 0, action) => {
+const initialState = {
+  count: 0,
+};
+const numReducer = (state = initialState, action) => {
   switch (action.type) {
     case INCREASE_NUM:
-      return state + 1;
+      return initialState.count + 1;
 
     case DECREASE_NUM:
-      return state - 1;
+      return initialState.count - 1;
 
     default:
       return state;
